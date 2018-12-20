@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiagramToolkit.States
 {
-    public class PreviewState : DrawingState
+    public class FreeHandDrawingState : DrawingState
     {
         private static DrawingState instance;
 
@@ -14,7 +14,7 @@ namespace DiagramToolkit.States
         {
             if (instance == null)
             {
-                instance = new PreviewState();
+                instance = new FreeHandDrawingState();
             }
             return instance;
         }
@@ -26,7 +26,7 @@ namespace DiagramToolkit.States
 
         public override void Select(DrawingObject obj)
         {
-            obj.ChangeState(EditState.GetInstance());
+            obj.ChangeState(StaticState.GetInstance());
         }
     }
 }
